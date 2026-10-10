@@ -1,6 +1,6 @@
 # Build the Student Result Power BI report
 
-The project-side implementation is ready: Power Query files load and prepare the generated CSV, `Measures.dax` contains the KPI formulas, and the instructions below describe the four report pages. The actual `.pbix` must be created and saved in Power BI Desktop; Desktop is not installed or available on this machine, so this workspace does not contain a `.pbix`.
+The project-side implementation is ready: Power Query files load and prepare the generated CSV, `Measures.dax` contains the KPI formulas, and the instructions below describe the four report pages. Follow the steps below in Power BI Desktop to create and save the `.pbix` report.
 
 ## 1. Generate or refresh the source CSV
 
@@ -78,7 +78,7 @@ Use the **Report** view. To add a visual, select its icon in **Visualizations**,
 ## 5. Save and check the report
 
 1. Select **File → Save as** and save the report as `Student_Result_BI.pbix` in the project folder.
-2. Check that Page 1 shows 200 students and a pass percentage of 80.50% for the generated dataset before applying slicers.
+2. Check that Page 1 shows 200 students and a pass percentage of 65.00% for the checked-in dataset before applying slicers.
 3. Check that Subject Analysis shows five subjects and Attendance Analysis shows the attendance bands.
 4. For later updates, rerun `main.py`, open the report, and choose **Home → Refresh**.
 

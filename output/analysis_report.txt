@@ -1,22 +1,31 @@
 STUDENT RESULT ANALYSIS REPORT
 ===============================
 Total students: 200
-Passed students: 161
-Failed students: 39
-Pass percentage: 80.50%
-Average percentage: 67.15%
-Average attendance: 78.72%
+Passed students: 130
+Failed students: 70
+Pass percentage: 65.00%
+Average percentage: 64.22%
+Average attendance: 75.94%
 
 Subject-wise average marks:
-OS       67.97
-AI       67.42
-DBMS     66.92
-Maths    66.83
-CN       66.62
+OS      65.21
+CN      64.24
+AI      64.06
+Maths   63.84
+DBMS    63.75
 
 Department average percentages:
 Department
-CSE    68.69
-EEE    67.82
-ECE    67.40
-ISE    65.05
+ISE   65.43
+EEE   64.69
+CSE   63.74
+ECE   63.14
+
+Grade distribution:
+Grade
+F      0
+D      6
+C     64
+B     71
+A     59
+A+     0
