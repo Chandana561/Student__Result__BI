@@ -1,0 +1,64 @@
+Total Students =
+DISTINCTCOUNT ( Students[Student_ID] )
+
+Passed Students =
+CALCULATE (
+    [Total Students],
+    Students[Result] = "Pass"
+)
+
+Failed Students =
+CALCULATE (
+    [Total Students],
+    Students[Result] = "Fail"
+)
+
+Pass Percentage =
+DIVIDE ( [Passed Students], [Total Students], 0 )
+
+Average Percentage =
+DIVIDE ( AVERAGE ( Students[Percentage] ), 100 )
+
+Average Attendance =
+DIVIDE ( AVERAGE ( Students[Attendance] ), 100 )
+
+Average Subject Marks =
+AVERAGE ( SubjectResults[Marks] )
+
+Students Needing Improvement =
+CALCULATE (
+    [Total Students],
+    Students[Improvement Status] = "Needs Improvement"
+)
+
+Best Subject =
+VAR SubjectAverages =
+    ADDCOLUMNS (
+        VALUES ( SubjectResults[Subject] ),
+        "@AverageMarks", [Average Subject Marks]
+    )
+VAR BestRow =
+    TOPN (
+        1,
+        SubjectAverages,
+        [@AverageMarks], DESC,
+        SubjectResults[Subject], ASC
+    )
+RETURN
+    CONCATENATEX ( BestRow, SubjectResults[Subject], ", " )
+
+Worst Subject =
+VAR SubjectAverages =
+    ADDCOLUMNS (
+        VALUES ( SubjectResults[Subject] ),
+        "@AverageMarks", [Average Subject Marks]
+    )
+VAR WorstRow =
+    TOPN (
+        1,
+        SubjectAverages,
+        [@AverageMarks], ASC,
+        SubjectResults[Subject], ASC
+    )
+RETURN
+    CONCATENATEX ( WorstRow, SubjectResults[Subject], ", " )
